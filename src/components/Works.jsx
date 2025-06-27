@@ -56,7 +56,7 @@ export default function Works() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl sm:text-4xl md:text-6xl py-4 sm:py-6 md:py-10 w-full sm:w-180"
+            className="text-2xl text-center sm:text-4xl md:text-6xl py-4 sm:py-6 md:py-10 w-full sm:w-180"
           >
             Here are some design explorations focused on improving user flows{" "}
             <br className="hidden sm:block" />
@@ -74,7 +74,7 @@ export default function Works() {
             whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: 80 }}
             transition={{ duration: 0.5 }}
-            className="text-lg sm:text-xl md:text-2xl"
+            className="text-lg text-center sm:text-xl md:text-2xl"
           >
             A product design exercise for a DeFi borrow/lend dapp, featuring
             four key dashboard screens

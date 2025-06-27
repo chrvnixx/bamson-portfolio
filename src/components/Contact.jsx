@@ -13,7 +13,7 @@ export default function Contact() {
         Contact Me
       </motion.h2>
       <div className="max-w-4xl mx-auto ">
-        <p className="text-2xl sm:text-2xl lg:text-6xl leading-tight mb-8 sm:mb-12">
+        <p className="text-2xl text-center sm:text-2xl lg:text-6xl leading-tight mb-8 sm:mb-12">
           Open to paid design work
           <br />
           and ready to collaborate
