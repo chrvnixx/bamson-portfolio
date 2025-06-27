@@ -1,4 +1,4 @@
-import Contact from "./Components/Contact";
+import Contact from "./components/Contact";
 import Intro from "./components/Intro";
 import Nav from "./components/Nav";
 import Works from "./components/Works";
