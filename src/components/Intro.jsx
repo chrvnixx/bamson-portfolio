@@ -11,7 +11,7 @@ export default function Intro() {
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="text-5xl sm:text-6xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight pl-4"
+            className="text-3xl sm:text-6xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tighter pl-4"
           >
             I'm Bamson , I design web
             <div className="mt-2 sm:mt-4">and product interfaces with</div>

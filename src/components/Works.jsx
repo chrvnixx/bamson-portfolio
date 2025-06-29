@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useState } from "react"; // Add this import
 
 export default function Works() {
+  const [zoomedImage, setZoomedImage] = useState(null);
+
   const imageVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -40,8 +43,25 @@ export default function Works() {
     },
   };
 
+  const handleImageClick = (imageSrc) => {
+    setZoomedImage(imageSrc);
+  };
+
   return (
     <div id="work" className="container mx-auto px-4 sm:px-6">
+      {zoomedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center cursor-pointer"
+          onClick={() => setZoomedImage(null)}
+        >
+          <img
+            src={zoomedImage}
+            alt="zoomed view"
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+          />
+        </div>
+      )}
+
       <div className="flex flex-col justify-center mt-8 sm:mt-20 md:mt-40">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <motion.h2
@@ -89,7 +109,12 @@ export default function Works() {
             variants={imageVariantsLeft}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/OVERVIEW PAGE.png" alt="overview page" />
+            <img
+              src="/OVERVIEW PAGE.png"
+              alt="overview page"
+              onClick={() => handleImageClick("/OVERVIEW PAGE.png")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Overview page – Gives users a snapshot of their portfolio health
               and activity.
@@ -102,7 +127,12 @@ export default function Works() {
             variants={imageVariantsRight}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/BORROW PAGE.png" alt="borrow page" />
+            <img
+              src="/BORROW PAGE.png"
+              alt="borrow page"
+              onClick={() => handleImageClick("/BORROW PAGE.png")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Borrow Page - Users complete loan dashboard. Track borrowed
               amounts, monitor liquidation risk, and view detailed asset
@@ -116,7 +146,12 @@ export default function Works() {
             variants={imageVariantsLeft}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/LEND PAGE.png" alt="lend page" />
+            <img
+              src="/LEND PAGE.png"
+              alt="lend page"
+              onClick={() => handleImageClick("/LEND PAGE.png")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Borrow Page - Users complete loan dashboard. Track borrowed
               amounts, monitor liquidation risk, and view detailed asset
@@ -130,7 +165,12 @@ export default function Works() {
             variants={imageVariantsRight}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/LIQUIDITY POOL PAGE.png" alt="liquidity pool page" />
+            <img
+              src="/LIQUIDITY POOL PAGE.png"
+              alt="liquidity pool page"
+              onClick={() => handleImageClick("/LIQUIDITY POOL PAGE.png")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Liquidity Pool Page – Clean table layout showing asset pairs, key
               metrics, and quick actions for users to exploring and interact
@@ -165,7 +205,12 @@ export default function Works() {
             variants={imageVariantsLeft}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/design 3.jpg" alt="mint preview page" />
+            <img
+              src="/design 3.jpg"
+              alt="mint preview page"
+              onClick={() => handleImageClick("/design 3.jpg")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Mint Preview - Users review NFT details and cost before
               proceeding.
@@ -178,7 +223,12 @@ export default function Works() {
             variants={imageVariantsRight}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/design 4.jpg" alt="confirm mint page" />
+            <img
+              src="/design 4.jpg"
+              alt="confirm mint page"
+              onClick={() => handleImageClick("/design 4.jpg")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Confirm Mint - Final step before minting. Approve transaction in
               wallet to complet mint.
@@ -191,7 +241,12 @@ export default function Works() {
             variants={imageVariantsLeft}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/design 5.jpg" alt="mint success page" />
+            <img
+              src="/design 5.jpg"
+              alt="mint success page"
+              onClick={() => handleImageClick("/design 5.jpg")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Mint Success - Your NFT is now yours. View it in your collection.
             </span>
@@ -203,7 +258,12 @@ export default function Works() {
             variants={imageVariantsRight}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <img src="/Mint Failed 1.png" alt="mint failed page" />
+            <img
+              src="/Mint Failed 1.png"
+              alt="mint failed page"
+              onClick={() => handleImageClick("/Mint Failed 1.png")}
+              className="cursor-pointer"
+            />
             <span className="text-[12px]">
               Mint Failure - This state display a failed mint transaction. Users
               see the cause of failure, rectify and try again.
@@ -237,7 +297,8 @@ export default function Works() {
             <img
               src="/OPHELIA DISPLAY.png"
               alt="ophelia landing page"
-              className="w-full h-auto"
+              className="w-full h-auto cursor-pointer"
+              onClick={() => handleImageClick("/OPHELIA DISPLAY.png")}
             />
           </div>
         </motion.div>
@@ -257,7 +318,8 @@ export default function Works() {
             <img
               src="/design 1.jpg"
               alt="Borrow/lend DAPP landing page"
-              className="w-full h-auto"
+              className="w-full h-auto cursor-pointer"
+              onClick={() => handleImageClick("/design 1.jpg")}
             />
           </div>
         </motion.div>
